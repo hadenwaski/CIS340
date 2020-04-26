@@ -1,23 +1,23 @@
-import React from 'react';
-import {  Text, Image, View } from 'react-native';
+import React, {useState} from 'react';
+import {  Text, View, Button } from 'react-native';
 
-export default function myDog() {
+function TV(props) {
 
-  let pic = {
-    url: "https://raw.githubusercontent.com/AbdunabiRamadan/CIS340/master/images/dog2.png"};
-  
+  const [isOff,setisOff] = useState(true);
   return (
-    <View style = {{
-      flex: 3,
-      justifyContent: 'center',
-      alignItems: 'center'
-    }}>
-      <Image source = {pic}
-        style = {{width: 200, height: 200}}
-/>
-<Text>Hello this is my dog</Text>
-     
-    </View>
+    <View>
+      {"\n\n\n\n\n"}
+      <Text>
+        This is {props.name} TV, and it is {isOff ? "OFF" : "Turned Me On"}
+      </Text>
+      <Button
+      onPress = {() => {
+        setisOff(false);
+      }}
+      disabled={!IsOff}
+      title ={IsOff ? "Turn Me On, Please!" : "Thank You"}
+      />
+      </View>
   );
 }
 
